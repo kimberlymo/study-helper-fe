@@ -1,0 +1,52 @@
+[
+  {
+    "id": "list1",
+    "name": "THIN",
+    "examDate": "10/07/2025",
+    "tasks": [
+      {
+        "id": "item1",
+        "name": "Item 1",
+        "description": "Description 1",
+        "completed": true
+      },
+      {
+        "id": "item2",
+        "name": "Item 2",
+        "description": "Description 2",
+        "completed": false
+      },
+      {
+        "id": "item3",
+        "name": "Item 3",
+        "description": "Description 3",
+        "completed": true
+      }
+    ]
+  },
+  {
+    "id": "list2",
+    "name": "LIN ALG",
+    "examDate": "12/07/2025",
+    "tasks": [
+      {
+        "id": "item1",
+        "name": "Item 1",
+        "description": "Description 1",
+        "completed": false
+      },
+      {
+        "id": "item2",
+        "name": "Item 2",
+        "description": "Description 2",
+        "completed": false
+      },
+      {
+        "id": "item3",
+        "name": "Item 3",
+        "description": "Description 3",
+        "completed": true
+      }
+    ]
+  }
+]

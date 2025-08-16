@@ -1,0 +1,12 @@
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px; // 5 * 8px (Material-UI spacing unit)
+    width: 100%;
+}
+
+.heading {
+    color: var(--mui-primary-contrastText); // Use your theme variable or a specific color
+    padding-bottom: 40px;
+}
