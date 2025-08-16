@@ -1,24 +1,24 @@
 import * as React from 'react';
 import {Container, Divider, List, ListSubheader} from '@mui/material';
 import ListItem from './ListItem';
-import Typography from "@mui/material/Typography";
 import {Task} from "../../model/task";
 import {useToDoStore} from "../../store/useToDoStore";
 import styles from './list.module.scss';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import {AddTask} from "../AddTask";
 import {formatDate} from "../../model/formatDate";
+import {EditableTitle} from "../EditableTitle";
 
-export const Lists = () => {
-    const lists = useToDoStore((state) => state.lists);
+export const ModuleLists = () => {
+    const modules = useToDoStore((state) => state.modules);
+    const {renameModule} = useToDoStore();
 
     return <Container className={styles.listsContainer}>
-        {lists.map((list) => (
-            <>
-                <List className={styles.list}>
+        {modules.map((list) => (
+                <List className={styles.list} key={`${list.id}_${list.name}`}>
                     <Container className={styles.titleContainer}>
                         <AssignmentTurnedInIcon className={styles.title}/>
-                        <Typography variant="h4" className={styles.title}>{list.name}</Typography>
+                        <EditableTitle title={list.name} onRenameTitle={renameModule} listId={list.id}/>
                     </Container>
                     <ListSubheader className={styles.listSubTitle}>
                         EXAM: {formatDate(list.examDate)}
@@ -31,8 +31,7 @@ export const Lists = () => {
                     }
                     <AddTask listId={list.id}/>
                 </List>
-            </>
         ))}</Container>
 }
 
-export default Lists;
+export default ModuleLists;

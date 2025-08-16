@@ -1,4 +1,4 @@
-import styles from "./createList/createListModal.module.scss";
+import styles from "./createModule/createListModal.module.scss";
 import { InputAdornment, TextField } from "@mui/material";
 import {ChangeEvent, FC, ReactNode} from "react";
 

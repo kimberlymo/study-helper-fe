@@ -12,16 +12,16 @@ import LaptopMac from '@mui/icons-material/LaptopMac';
 
 
 export const ExamTimeLine = () => {
-    const {lists} = useToDoStore();
+    const {modules} = useToDoStore();
 
     return (
          <Timeline position="left" color="primary">
-             {lists.map(exam =>
+             {modules.map(module =>
                  <TimelineItem>
                      <TimelineOppositeContent sx={{ margin: 'auto 0', color: 'secondary.contrastText' }}
                                               align="right"
                                               variant="body2">
-                         {formatDate(exam.examDate)}
+                         {formatDate(module.examDate)}
                      </TimelineOppositeContent>
                      <TimelineSeparator>
                          <TimelineConnector sx={{ backgroundColor: 'warning.main' }}/>
@@ -30,7 +30,7 @@ export const ExamTimeLine = () => {
                          </TimelineDot>
                          <TimelineConnector sx={{ backgroundColor: 'warning.main' }}/>
                      </TimelineSeparator>
-                     <TimelineContent sx={{ py: '12px', px: 2, margin: 'auto 0', color: 'secondary.contrastText' }}>{exam.name}</TimelineContent>
+                     <TimelineContent sx={{ py: '12px', px: 2, margin: 'auto 0', color: 'secondary.contrastText' }}>{module.name}</TimelineContent>
                  </TimelineItem>
              )}
             </Timeline>

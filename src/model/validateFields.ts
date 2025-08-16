@@ -27,7 +27,7 @@ export const validateDate = (date: string) => {
     tomorrow.setDate(today.getDate() + 1);
 
     if (parsedDate < tomorrow) {
-        return "Date must be at least tomorrow";
+        return "Date must be in the future";
     }
 
     return '';
