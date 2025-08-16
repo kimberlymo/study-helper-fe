@@ -3,6 +3,10 @@ on:
     workflow_dispatch:
 jobs:
   build:
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,6 +32,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      contents: read
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
