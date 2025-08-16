@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { ToDoPage } from "./pages/todo/ToDoPage";
 import { theme } from "./theme";
+import {Overview} from "./pages/overview/Overview";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement,
@@ -16,7 +17,7 @@ root.render(
 				<Routes>
 					<Route path="/" element={<Navigate to="/calendar" replace />} />
 					<Route path="/to-do" element={<ToDoPage />} />
-					<Route path="/calendar" element={<ToDoPage />} />
+					<Route path="/overview" element={<Overview />} />
 				</Routes>
 			</BrowserRouter>
 		</ThemeProvider>
