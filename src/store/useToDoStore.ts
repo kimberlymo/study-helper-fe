@@ -3,10 +3,16 @@ import { create } from "zustand";
 import toDoMock from "../mock-data/todo.json";
 import { Task } from "../model/task";
 import { Todolist } from "../model/todolist";
+import {isSameDay} from "../model/dateHelper";
 
 const mockData: Todolist[] = toDoMock.map((list) => ({
 	...list,
-	examDate: new Date(list.examDate.replace(/\./g, "/")), // Convert "10.07.2025" to "10/07/2025" and parse as Date
+	examDate: new Date(list.examDate),
+    tasks: list.tasks.map((task: any) => ({
+        ...task,
+        startTime: task.startTime ? new Date(task.startTime) : undefined,
+        endTime: task.endTime ? new Date(task.endTime) : undefined,
+    })),
 }));
 
 interface ToDoStore {
@@ -23,6 +29,8 @@ interface ToDoStore {
 	addTask: (listId: string, name: string, description: string) => void;
 	removeTask: (listId: string, taskId: string) => void;
 	renameModule: (listId: string, newName: string) => void;
+    getExamsOnDate: (date: Date) => Todolist[];
+    getPlannedTasks: () => Task[];
 }
 
 export const useToDoStore = create<ToDoStore>((set, get) => ({
@@ -86,4 +94,8 @@ export const useToDoStore = create<ToDoStore>((set, get) => ({
 				list.id === listId ? { ...list, name: newName } : list,
 			),
 		})),
+    getExamsOnDate: (date: Date) =>
+        get().modules
+            .filter(value => isSameDay(value.examDate, date)),
+    getPlannedTasks: () => get().modules.flatMap(module => module.tasks).filter(task => task.startTime !== undefined),
 }));

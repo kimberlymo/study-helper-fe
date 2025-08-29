@@ -6,7 +6,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import { formatDate } from "../model/formatDate";
+import { formatDate } from "../model/dateHelper";
 import { useToDoStore } from "../store/useToDoStore";
 
 export const ExamTimeLine = () => {

@@ -1,9 +1,8 @@
-import {Container} from "@mui/material";
-import Typography from "@mui/material/Typography";
+import {Container, Typography} from "@mui/material";
 import {CreateModuleModal} from "../../components/createModule/CreateModuleModal";
 import ModuleLists from "../../components/module/ModuleLists";
-import styles from "./todo.module.scss";
 import {TabbedNavigation} from "../../components/tabbedNavigation/TabbedNavigation";
+import styles from "../pages.module.scss";
 
 export const ToDoPage = () => {
     return (

@@ -1,9 +1,19 @@
+import {Calendar} from "../../components/calendar/Calendar";
+import {TabbedNavigation} from "../../components/tabbedNavigation/TabbedNavigation";
+import {Container, Typography} from "@mui/material";
+import styles from "../pages.module.scss";
+
 export const Overview = () => {
-	return (
-		<div>
-			<h1>Overview</h1>
-			<p>This page will provide an overview of your tasks and modules.</p>
-			{/* Additional content can be added here */}
-		</div>
-	);
+    return (
+        <div>
+            <TabbedNavigation/>
+            <Container className={styles.container}>
+                <Typography variant="h3" className={styles.heading}>
+                    OVERVIEW
+                </Typography>
+                <Calendar startDate={new Date()}/>
+            </Container>
+
+        </div>
+    );
 };

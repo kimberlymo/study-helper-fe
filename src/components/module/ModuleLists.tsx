@@ -1,6 +1,6 @@
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import { Container, Divider, List, ListSubheader } from "@mui/material";
-import { formatDate } from "../../model/formatDate";
+import { formatDate } from "../../model/dateHelper";
 import type { Task } from "../../model/task";
 import { useToDoStore } from "../../store/useToDoStore";
 import { AddTask } from "../AddTask";

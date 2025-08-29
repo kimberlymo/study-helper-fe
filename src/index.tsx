@@ -15,7 +15,7 @@ root.render(
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<Navigate to="/calendar" replace />} />
+					<Route path="/" element={<Navigate to="/overview" replace />} />
 					<Route path="/to-do" element={<ToDoPage />} />
 					<Route path="/overview" element={<Overview />} />
 				</Routes>
