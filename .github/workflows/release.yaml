@@ -6,11 +6,14 @@ on:
         - main
 
 jobs:
-  build:
+  deploy:
     permissions:
       pages: write
       id-token: write
       contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,25 +29,11 @@ jobs:
       - name: Build the project
         run: npm run build
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
-          name: github-pages
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-      contents: read
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
