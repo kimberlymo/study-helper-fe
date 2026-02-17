@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.module.scss";
+import "./index.scss";
 import { ThemeProvider } from "@mui/material";
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ToDoPage } from "./pages/todo/ToDoPage";
