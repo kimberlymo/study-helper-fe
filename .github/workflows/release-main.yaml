@@ -1,4 +1,4 @@
-name: Release to GitHub Pages
+name: Release
 on:
     workflow_dispatch:
     push:
